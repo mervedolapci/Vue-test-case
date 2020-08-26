@@ -31,14 +31,17 @@ export default {
       }
   },
   methods: {
-      getUser(item) {             
-   this.userInfo=this.$store.state.userList.find((object) => object.selectedBook === item )
+    getUser(item) {  
+    this.userInfo={}           
+    this.userInfo=this.$store.state.userList.find((object) => object.selectedBook === item )
     },
     removeUserFromBook(){
-    this.$store.dispatch('remove_user_name',this.userInfo)
+    this.temp=this.userInfo;    
+    this.$store.dispatch('remove_user_name',this.temp)
      this.$toasted.show('Book has been getted from user');
         setTimeout(() => {
         this.$toasted.clear()
+        this.selected=null
         this.userInfo={}
     }, 1000);
 
