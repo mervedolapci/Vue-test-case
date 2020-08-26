@@ -12,8 +12,9 @@
     <p>{{this.userInfo.id}}</p>
     <p>{{this.userInfo.name}}</p>
     <p>{{this.userInfo.address}}</p>
+    <button @click="removeUserFromBook" variant="dark" size="sm">delete</button>
     </b-card>
-    <button @click.prevent="removeUserFromBook(item)" variant="dark" size="sm"> button</button>
+    
 </div>
 
 </div>
@@ -32,9 +33,10 @@ export default {
       getUser(item) {             
    this.userInfo=this.$store.state.userList.find((object) => object.selectedBook === item )
     },
-    removeUserFromBook(item){
-        console.log(item,"jk")
-    }
+    removeUserFromBook(){
+        console.log(this.userInfo)
+   this.$store.dispatch('remove_user_name',this.userInfo)
+     }
       
   },
     computed: {

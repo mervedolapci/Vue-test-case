@@ -23,6 +23,11 @@ export default new Vuex.Store({
   },
   get_user_list(state,payload){  
   state.userList.find((item) => item.selectedBook === payload )    
+  },
+  remove_user_from_book(state,payload){
+    const index = state.bookList.findIndex((item) => item.name === payload.selectedBook);
+    state.bookList[index].user=null
+
   }
   },
   actions: {
@@ -32,9 +37,10 @@ export default new Vuex.Store({
   add_user({commit},payload){
     commit('add_user_list',payload)
   },
-  get_user({commit,payload}){
-    commit('get_user_list',payload)
+  remove_user_name({commit},payload){
+    commit('remove_user_from_book',payload)
   }
+ 
   },
   modules: {
 
