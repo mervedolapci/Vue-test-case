@@ -19,7 +19,7 @@
     </b-col>
     <b-col md="auto">
         <div  v-if="item.user!==null"><p>At User</p></div>
-        <div else >
+        <div v-if="item.user===null" >
         <p> In store </p>
         <button  @click.prevent="removeItem(item)" variant="dark" size="sm">Remove</button>
         </div>

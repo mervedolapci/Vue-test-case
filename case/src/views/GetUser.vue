@@ -27,7 +27,7 @@ export default {
       return {
           selected: '',
           userInfo:{},
-          msg:''
+          temp :{}
       }
   },
   methods: {
@@ -39,6 +39,7 @@ export default {
      this.$toasted.show('Book has been getted from user');
         setTimeout(() => {
         this.$toasted.clear()
+        this.userInfo={}
     }, 1000);
 
      }
