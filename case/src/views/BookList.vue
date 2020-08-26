@@ -1,11 +1,10 @@
 <template>
-<div class="container col-9 m-4 border"><strong>List</strong>
-    <router-link to="/"  class="nav-link">Return Home Page</router-link>
+ <div class="container border bg-light mt-3 mb-4 col-4 p-3  ">
+<strong> Book List</strong>
+<router-link to="/"  class="nav-link">Return Home Page</router-link>
 <b-card-group deck v-for="(item, index) in datalist" :key="index" >
-  <!-- Card body -->
   <b-row align-v="center">
     <b-col md="auto">
-      <!-- Avatar -->
       <a href="javascript:;">
         <img
         rounded="circle"
@@ -15,13 +14,15 @@
       </a>
     </b-col>
     <b-col class="ml--2">
-      <h5 class="mb-0">
-        <a href="#">{{item.author}}</a>
-      </h5>
-      <p class="text-sm text-muted mb-0">{{item.name}}</p>
+      <h5 class="mb-0">{{item.name}}</h5>
+      <p class="text-sm text-muted mb-0">{{item.author}}</p>
     </b-col>
     <b-col md="auto">
-      <button  @click.prevent="removeItem(item)" variant="dark" size="sm">Remove</button>
+        <div  v-if="item.user!==null"><p>At User</p></div>
+        <div else >
+        <p> In store </p>
+        <button  @click.prevent="removeItem(item)" variant="dark" size="sm">Remove</button>
+        </div>
     </b-col>
   </b-row>
 </b-card-group>

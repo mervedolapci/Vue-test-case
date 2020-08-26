@@ -35,7 +35,7 @@ export default {
             name: '',
             author: '',
             img: '',
-            user:''
+            user: null
           }
         }
     },

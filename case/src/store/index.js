@@ -20,6 +20,9 @@ export default new Vuex.Store({
   remove_book(state, payload) {  
     const index = state.bookList.findIndex((item) => item.name === payload.name);
     state.bookList.splice(index, 1);
+  },
+  get_user_list(state,payload){  
+  state.userList.find((item) => item.selectedBook === payload )    
   }
   },
   actions: {
@@ -28,6 +31,9 @@ export default new Vuex.Store({
   },
   add_user({commit},payload){
     commit('add_user_list',payload)
+  },
+  get_user({commit,payload}){
+    commit('get_user_list',payload)
   }
   },
   modules: {
@@ -36,6 +42,12 @@ export default new Vuex.Store({
   getters :{
     get_book_list(state){
       return state.bookList
-    }
+    },
+    get_user_list(state){
+       return state.userList 
+    }, 
+    get_books_for_user(state){
+      return state.bookList.filter(item=> item.user !== null)
+    },
   }
 })
