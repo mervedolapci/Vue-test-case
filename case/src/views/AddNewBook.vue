@@ -45,6 +45,10 @@ export default {
       ]),
       submitForm(){       
         this.$store.dispatch('add_book_list', this.books);   
+        this.$toasted.show('Book has been added');
+        setTimeout(() => {
+        this.$toasted.clear()
+    }, 1000);
       //  this.clearForm()
  
       },

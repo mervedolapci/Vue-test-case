@@ -26,7 +26,8 @@ export default {
     data() {
       return {
           selected: '',
-          userInfo:{}
+          userInfo:{},
+          msg:''
       }
   },
   methods: {
@@ -34,8 +35,12 @@ export default {
    this.userInfo=this.$store.state.userList.find((object) => object.selectedBook === item )
     },
     removeUserFromBook(){
-    
-   this.$store.dispatch('remove_user_name',this.userInfo)
+    this.$store.dispatch('remove_user_name',this.userInfo)
+     this.$toasted.show('Book has been getted from user');
+        setTimeout(() => {
+        this.$toasted.clear()
+    }, 1000);
+
      }
       
   },

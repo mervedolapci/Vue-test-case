@@ -42,8 +42,13 @@ export default {
   },
 methods: {
      removeItem(item) {             
-        //message = `${item.name} has been removed `;
         this.$store.commit('remove_book', item);
+        this.$toasted.show(' Book has been removed ');
+        setTimeout(() => {
+        this.$toasted.clear()
+        }, 1000);
+      
+
     }
 }
 }

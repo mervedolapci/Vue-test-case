@@ -49,6 +49,10 @@ export default {
       ]),
       add(){  
         this.$store.dispatch('add_user', this.user)
+        this.$toasted.show('Book has been setted user');
+        setTimeout(() => {
+        this.$toasted.clear()
+    }, 1000);
         },
     },
     computed: {
