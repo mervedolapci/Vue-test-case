@@ -34,7 +34,7 @@ export default {
    this.userInfo=this.$store.state.userList.find((object) => object.selectedBook === item )
     },
     removeUserFromBook(){
-        console.log(this.userInfo)
+    
    this.$store.dispatch('remove_user_name',this.userInfo)
      }
       
