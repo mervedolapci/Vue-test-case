@@ -56,7 +56,7 @@ export default {
         },
     },
     computed: {
-    ...mapGetters({datalist:'get_book_list'})
+    ...mapGetters({datalist:'get_book_for_set_user'})
   },
 }
 </script>

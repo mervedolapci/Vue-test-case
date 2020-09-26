@@ -56,7 +56,10 @@ export default new Vuex.Store({
        return state.userList 
     }, 
     get_books_for_user(state){
-      return state.bookList.filter(item=> item.user !== null)
-    },
+      return state.bookList.filter(item => item.user !== null)
+    },    
+    get_book_for_set_user(state){
+      return state.bookList.filter(item => item.user == null )
+    }
   }
 })
