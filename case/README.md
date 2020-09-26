@@ -1,4 +1,4 @@
-# case
+# BOOK STORE
 
 ## Project setup
 ```
