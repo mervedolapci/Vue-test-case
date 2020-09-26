@@ -32,7 +32,8 @@ export default new Vuex.Store({
   },
   actions: {
   add_book_list({commit},payload){     
-      commit('add_book_list', payload)
+      const bookItem = {...payload, user: null}
+      commit('add_book_list', bookItem)
   },
   add_user({commit},payload){
     commit('add_user_list',payload)

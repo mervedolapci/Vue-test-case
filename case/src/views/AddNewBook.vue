@@ -49,8 +49,7 @@ export default {
         setTimeout(() => {
         this.$toasted.clear()
     }, 1000);
-      //  this.clearForm()
- 
+        this.clearForm() 
       },
      clearForm(){
         this.books.name = '';
