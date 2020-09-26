@@ -27,6 +27,8 @@ export default new Vuex.Store({
   remove_user_from_book(state,payload){
     const index = state.bookList.findIndex((item) => item.name === payload.selectedBook);
     state.bookList[index].user=null
+    const index_user = state.userList.findIndex((item)=> item.name == payload.user);
+    state.userList.splice(index_user,1)
 
   }
   },
